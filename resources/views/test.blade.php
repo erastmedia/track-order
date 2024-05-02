@@ -13,7 +13,7 @@
 @section('content_header')
     <h1>Dashboard</h1>
 @stop
- 
+
 @section('plugins.DateRangePicker', true)
 @section('plugins.Datatables', true)
 @section('plugins.Select2', true)
@@ -89,8 +89,8 @@
                     </table>
                </div>
             </div>
+        </div>
     </div>
-</div>
 
 <div class="modal fade" id="modal-cost">
      <div class="modal-dialog modal-md">

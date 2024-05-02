@@ -18,7 +18,7 @@ class CreateReceiveTable extends Migration
             $table->string('nomororder', 50);
             $table->string('customer_name', 100)->nullable();
             $table->unsignedBigInteger('id_buyer');
-            $table->foreign('id_buyer')->references('id')->on('buyer')->onDelete('cascade');
+            // $table->foreign('id_buyer')->references('id')->on('buyer')->onDelete('cascade');
             $table->unsignedBigInteger('id_jenis_order');
             $table->foreign('id_jenis_order')->references('id')->on('jenis_order')->onDelete('cascade');
             $table->integer('qty');

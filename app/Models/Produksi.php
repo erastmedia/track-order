@@ -5,35 +5,38 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Receive extends Model
+class Produksi extends Model
 {
     use HasFactory;
 
-    protected $table = 'receive';
+    protected $table = 'produksi';
 
     protected $primaryKey = 'id';
 
     protected $fillable = [
         'id',
-        'nomororder',
-        'customer_name',
-        'id_buyer',
+        'id_receive',
+        'kodeitem',
         'id_jenis_order',
+        'pcs',
+        'tglkirim',
+        'tglkirimbaru',
+        'tglkirimbed',
+        'tgldelivery',
+        'hair',
+        'base',
+        'venting',
+        'final',
+        'cost',
+        'flagapproval',
+        'tglapproval',
         'qty',
-        'tglorder',
-        'tglmasuk',
-        'flagproses',
         'flagkirimbuyer',
-        'status',
+        'flagproses',
     ];
 
     public function receive()
     {
         return $this->belongsTo(Receive::class, 'id_receive', 'id');
-    }
-
-    public function produksis()
-    {
-        return $this->hasMany(Produksi::class, 'id_receive', 'id');
     }
 }

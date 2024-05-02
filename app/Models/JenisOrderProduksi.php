@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class JenisOrder extends Model
+class JenisOrderProduksi extends Model
 {
     use HasFactory;
 
-    protected $table = 'jenis_order';
+    protected $table = 'jenis_order_produksi';
 
     protected $primaryKey = 'id';
 
@@ -18,8 +18,8 @@ class JenisOrder extends Model
         'jenis',
     ];
 
-    public function receives()
+    public function produksis()
     {
-        return $this->hasMany(Receive::class, 'id_jenis_order', 'id');
+        return $this->hasMany(Produksi::class, 'id_jenis_order', 'id');
     }
 }
