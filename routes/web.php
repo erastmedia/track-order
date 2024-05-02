@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MigrasiController;
 use App\Http\Controllers\HomeController;
 
 
@@ -14,6 +15,8 @@ Auth::routes();
 //     return view('home');
 // })->name('home')->middleware('auth');
 
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/migrate-database', [MigrasiController::class, 'migrate']);
+Route::view('/migration-progress', 'migration');
+
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/filterall', [HomeController::class, 'filterAll'])->name('filterall');
